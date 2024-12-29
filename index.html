@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | OKonkwo Stephen Ifeanyi</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #1f1c2c, #928dab);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.6);
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+        }
+
+        header nav a {
+            margin: 0 15px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #00e0ff;
+        }
+
+        section {
+            padding: 100px 50px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://via.placeholder.com/1600x900') no-repeat center/cover;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: #00e0ff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .hero button:hover {
+            background: #007a99;
+        }
+
+        .skills, .projects {
+            background: rgba(0, 0, 0, 0.8);
+            margin: 20px auto;
+            padding: 50px 20px;
+            border-radius: 10px;
+        }
+
+        h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            font-size: 1.2rem;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OKonkwo Stephen Ifeanyi</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to My Portfolio</h2>
+        <p>Exploring the World of Web Development</p>
+        <button>Learn More</button>
+    </section>
+
+    <section id="about">
+        <h3>About Me</h3>
+        <p>I am a passionate web developer with a strong foundation in PHP, MySQL, and JavaScript. My goal is to create innovative, user-friendly, and futuristic web solutions that stand out.</p>
+    </section>
+
+    <section id="skills" class="skills">
+        <h3>Skills</h3>
+        <ul>
+            <li>PHP (49/53% proficient)</li>
+            <li>MySQL (49/53% proficient)</li>
+            <li>HTML & CSS</li>
+            <li>JavaScript</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="projects">
+        <h3>Projects</h3>
+        <ul>
+            <li><strong>3D Animated Website:</strong> Created and sold a visually stunning 3D animated website.</li>
+            <li><strong>Database Solutions:</strong> Designed and sold several custom databases.</li>
+            <li><strong>Ghostwriting:</strong> Authored 25 articles for diverse clients.</li>
+            <li><strong>Copywriting:</strong> Delivered 33 high-quality projects, including freelance and corporate work.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Connect with me: <a href="mailto:stephenokonkwo18@gmail.com" style="color: #00e0ff;">Email</a> | <a href="https://www.linkedin.com/in/okonkwo-stephen-610776289" style="color: #00e0ff;">LinkedIn</a></p>
+        <p>&copy; 2024 OKonkwo Stephen Ifeanyi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+
+        const revealSection = () => {
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight - 100) {
+                    section.classList.add('show');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealSection);
+    </script>
+</body>
+</html>
